@@ -10,6 +10,7 @@ public class Solution {
         int toothCounter = 32;
 
         //напишите тут ваш код
+
         toothCounter--;
         toothCounter--;
         toothCounter--;

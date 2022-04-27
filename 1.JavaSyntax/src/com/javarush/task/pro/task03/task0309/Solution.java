@@ -11,8 +11,8 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         int numberA = scanner.nextInt();
         int numberB = scanner.nextInt();
-        int min = numberA > numberB ? numberA : numberB;
-        System.out.println(min);
+
+        System.out.println(numberA > numberB ? numberA : numberB);
 
     }
 }

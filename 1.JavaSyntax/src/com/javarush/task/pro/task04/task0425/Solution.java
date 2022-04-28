@@ -16,10 +16,8 @@ public class Solution {
         //напишите тут ваш код
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                if (i == 8 && j == 3) {
-                    System.out.print(robot);
-                } else if (i == 9) {
-                    System.out.print(bug);
+                if (i == 9) {
+                    System.out.print(death);
                 } else if (j == 3) {
                     System.out.print(hole);
                 } else {

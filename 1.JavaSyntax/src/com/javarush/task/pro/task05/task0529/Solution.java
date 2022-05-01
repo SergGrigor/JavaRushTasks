@@ -25,6 +25,7 @@ public class Solution {
         }
         int countsRobotanks = 10;
         while (countsRobotanks > 0) {
+            bombs = new int[height][width];
             for (int i = 0; i < bombs.length; i++) {
                 for (int j = 10; j > 0; ) {
                     int k = (int) (Math.random() * width);
@@ -34,8 +35,8 @@ public class Solution {
                     }
                 }
             }
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width; j++) {
+            for (int i = 0; i < field.length; i++) {
+                for (int j = 0; j < field[i].length; j++) {
                     if (field[i][j].equals(robotank) && bombs[i][j] == 1) {
                         field[i][j] = hit;
                         countsRobotanks--;

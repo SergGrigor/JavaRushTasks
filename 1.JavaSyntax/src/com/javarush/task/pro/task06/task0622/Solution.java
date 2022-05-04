@@ -22,6 +22,7 @@ public class Solution {
         //напишите тут ваш код
         diabloPosition = getRandomNumber(4);
         findDiablo();
+        battle();
     }
 
     public static void findDiablo() {
@@ -37,6 +38,17 @@ public class Solution {
             }
         }
 
+    }
+    public static void battle() {
+        for (; amigoLives > 0 && diabloLives > 0 ;) {
+            if (amigoAttacks() != diabloDefends()) {
+                diabloLostLife();
+                System.out.println(amigoAttackPhrase);
+            } else {
+                amigoLostLife();
+                System.out.println(diabloDefendPhrase);
+            }
+        }
     }
 
     public static void amigoLostLife() {

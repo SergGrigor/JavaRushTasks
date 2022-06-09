@@ -1,12 +1,14 @@
 package com.javarush.task.pro.task13.task1313;
 
-import java.util.ArrayList;
 
 public class StringsLinkedList {
     private Node first = new Node();
     private Node last = new Node();
 
-    private Node lastElement;//создание временной ссылки
+    public StringsLinkedList() {
+        first.next = last;
+        last.prev = first;
+    }
 
     public void printAll() {
         Node currentElement = first.next;
@@ -17,23 +19,13 @@ public class StringsLinkedList {
     }
 
     public void add(String value) {
-        //напишите тут ваш код
+        Node newNode = new Node();
+        newNode.value = value;
+        Node lastNode = last.prev;
+        lastNode.next = newNode;
+        newNode.prev = lastNode;
+        last.prev = newNode;
 
-        //если в списке один элемент
-        if (first.next == null) {
-            Node newElement = new Node(); //создание нового элемента
-            newElement.value = value; //запись значения
-            last.prev = newElement; //запись последнего элемента в Node last
-            first.next = newElement;
-            lastElement = newElement;
-        } else {
-            Node newElement = new Node(); //создание нового элемента
-            newElement.value = value; //запись значения
-            last.prev = newElement; //запись последнего элемента в Node last
-            newElement.prev = lastElement;
-            lastElement.next = newElement;
-            lastElement = newElement;
-        }
     }
 
     public static class Node {

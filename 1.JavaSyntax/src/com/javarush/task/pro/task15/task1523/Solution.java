@@ -18,7 +18,7 @@ public class Solution {
              InputStream inputStream = urlConnection.getInputStream();
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
              ) {
-            printStream.println("");
+            printStream.println("Привет!");
             while (bufferedReader.ready()) {
                 System.out.println(bufferedReader.readLine());
             }

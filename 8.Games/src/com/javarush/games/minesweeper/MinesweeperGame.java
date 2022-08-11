@@ -10,7 +10,7 @@ public class MinesweeperGame extends Game {
     private static final int SIDE = 9;
     private GameObject[][] gameField = new GameObject[SIDE][SIDE];
     private int countMinesOnField;
-    private int countFlags;
+    private int countFlags = countMinesOnField;
     private static final String MINE = "\uD83D\uDCA3";
     private static final String FLAG = "\uD83D\uDEA9";
 
@@ -89,8 +89,34 @@ public class MinesweeperGame extends Game {
         }
     }
 
+    private void markTile(int x, int y) {
+        GameObject gameObjects = gameField[y][x];
+        if (!gameObjects.isOpen) {
+            if (countFlags == 0 && !gameObjects.isFlag) {
+
+            } else {
+                if (gameObjects.isFlag) {
+                    gameObjects.isFlag = false;
+                    setCellValue(x, y, "");
+                    countFlags++;
+                    setCellColor(x, y, Color.ORANGE);
+                } else {
+                    gameObjects.isFlag = true;
+                    setCellValue(x, y, FLAG);
+                    countFlags--;
+                    setCellColor(x, y, Color.YELLOW);
+                }
+            }
+        }
+    }
+
     @Override
     public void onMouseLeftClick(int x, int y) {
         openTile(x, y);
+    }
+
+    @Override
+    public void onMouseRightClick(int x, int y) {
+        markTile(x, y);
     }
 }

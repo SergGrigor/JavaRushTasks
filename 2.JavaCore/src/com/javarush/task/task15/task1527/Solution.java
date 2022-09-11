@@ -16,7 +16,6 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String url = reader.readLine();
-        //напишите тут ваш код
         String [] parameters = url.substring(url.indexOf("?") + 1).split("&");
         List<String> nameParameters = new ArrayList<String>();
         List<String> valueParameters = new ArrayList<String>();

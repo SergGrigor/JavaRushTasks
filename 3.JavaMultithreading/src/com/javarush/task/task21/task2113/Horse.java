@@ -40,6 +40,11 @@ public class Horse {
     }
 
     public void print() {
-
+        int countPoint = (int) this.distance;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < countPoint; i++) {
+            builder.append(".");
+        }
+        System.out.println(builder + this.name);
     }
 }

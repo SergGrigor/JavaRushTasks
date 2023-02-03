@@ -1,6 +1,7 @@
 package com.javarush.task.task21.task2113;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Hippodrome {
@@ -20,6 +21,7 @@ public class Hippodrome {
         horseList.add(new Horse("Третья", 3, 0));
         game = new Hippodrome(horseList);
         game.run();
+        game.printWinner();
     }
 
     public List<Horse> getHorses() {
@@ -47,5 +49,15 @@ public class Hippodrome {
         for (int i = 0; i < 10; i++) {
             System.out.println("");
         }
+    }
+
+    public Horse getWinner() {
+        this.getHorses().sort(Comparator.comparingInt(horse -> (int) horse.getDistance()));
+        return this.getHorses().get(this.getHorses().size() - 1);
+    }
+
+
+    public void printWinner() {
+        System.out.println("Winner is " + this.getWinner().getName() + "!"); ;
     }
 }

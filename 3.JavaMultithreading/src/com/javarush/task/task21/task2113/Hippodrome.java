@@ -9,10 +9,6 @@ public class Hippodrome {
 
     private List<Horse> horses;
 
-    public List<Horse> getHorses() {
-        return horses;
-    }
-
     public Hippodrome(List<Horse> horses) {
         this.horses = horses;
     }
@@ -23,5 +19,21 @@ public class Hippodrome {
         horseList.add(new Horse("Вторая", 3, 0));
         horseList.add(new Horse("Третья", 3, 0));
         game = new Hippodrome(horseList);
+    }
+
+    public List<Horse> getHorses() {
+        return horses;
+    }
+
+    public void run() {
+
+    }
+
+    public void move() {
+
+    }
+
+    public void print() {
+
     }
 }

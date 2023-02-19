@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Arkanoid {
 
+    static Arkanoid game;
+
     private int width;
     private int height;
 
@@ -54,6 +56,14 @@ public class Arkanoid {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public void run() {
+
+    }
+
+    public void move() {
+
     }
 
     public static void main(String[] args) {

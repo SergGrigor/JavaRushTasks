@@ -31,9 +31,14 @@ public class Stand extends BaseObject {
     public void draw(Canvas canvas) {
 
     }
-
     @Override
     public void move() {
-
+        x += speed * direction;
+    }
+    public void moveLeft() {
+        direction = -1;
+    }
+    public void moveRight() {
+        direction = 1;
     }
 }
